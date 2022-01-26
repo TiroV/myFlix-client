@@ -19,8 +19,8 @@
   },
   "homepage": "https://github.com/TiroV/myFlix-client#readme",
   "dependencies": {
-    "@parcel/transformer-sass": "2.0.0-rc.0",
-    "parcel": "2.0.0-rc.0",
+    "@parcel/transformer-sass": "1.12.5",
+    "parcel": "1.12.5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   }
