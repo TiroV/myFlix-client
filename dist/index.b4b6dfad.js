@@ -24454,6 +24454,8 @@ parcelHelpers.export(exports, "LoginView", ()=>LoginView
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
 var _s = $RefreshSig$();
 function LoginView(props) {
     _s();
@@ -24462,7 +24464,15 @@ function LoginView(props) {
     const handleSubmit = (e)=>{
         e.preventDefault();
         console.log(username, password);
-        /* Send a request to the server for authentication */ /* then call props.onLoggedIn(username) */ props.onLoggedIn(username);
+        /* Send request to the server for authentication */ _axiosDefault.default.post('https://our-very-own.herokuapp.com/login', {
+            Username: username,
+            Password: password
+        }).then((response)=>{
+            const data = response.data;
+            props.onLoggedIn(data);
+        }).catch((e)=>{
+            console.log('Invalid Username.');
+        });
     };
     return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("form", {
         children: [
@@ -24475,13 +24485,13 @@ function LoginView(props) {
                         onChange: (e)=>setUsername(e.target.value)
                     }, void 0, false, {
                         fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 19,
+                        lineNumber: 29,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/login-view/login-view.jsx",
-                lineNumber: 17,
+                lineNumber: 27,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("label", {
@@ -24493,13 +24503,13 @@ function LoginView(props) {
                         onChange: (e)=>setPassword(e.target.value)
                     }, void 0, false, {
                         fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 23,
+                        lineNumber: 33,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/login-view/login-view.jsx",
-                lineNumber: 21,
+                lineNumber: 31,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("button", {
@@ -24508,13 +24518,21 @@ function LoginView(props) {
                 children: "Submit"
             }, void 0, false, {
                 fileName: "src/components/login-view/login-view.jsx",
-                lineNumber: 25,
+                lineNumber: 35,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("button", {
+                variant: "text",
+                children: "Register?"
+            }, void 0, false, {
+                fileName: "src/components/login-view/login-view.jsx",
+                lineNumber: 36,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "src/components/login-view/login-view.jsx",
-        lineNumber: 16,
+        lineNumber: 26,
         columnNumber: 9
     }, this));
 }
@@ -24528,7 +24546,7 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"gkKU3":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","axios":"jo6P5"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
