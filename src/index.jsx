@@ -1,6 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+<<<<<<< Updated upstream
 import MainView from './components/main-view/main-view';
+=======
+import { MainView } from './components/main-view/main-view';
+import Container from 'react-bootstrap/Container';
+>>>>>>> Stashed changes
 
 // Import statement to indicate that you need to bundle `./index.scss`
 import './index.scss';
