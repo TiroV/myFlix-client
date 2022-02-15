@@ -1,0 +1,1 @@
+{"mappings":";;AEEA;EACE,OAHM","sources":["src/components/profile-view/profile-view.scss","src/components/navbar-view/navbar-view.scss","src/index.scss"],"sourcesContent":[null,null,"$color: red;\r\n\r\n.my-flix {\r\n  color: $color;\r\n}"],"names":[],"version":3,"file":"index.83325510.css.map","sourceRoot":"/__parcel_source_root/"}
